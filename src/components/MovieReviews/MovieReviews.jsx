@@ -35,7 +35,7 @@ export default function MovieReviews() {
         <div className={css.loader}>
           <Loader />
         </div>
-      ) : reviews ? (
+      ) : reviews[0] ? (
         <ul className={css.ul}>
           {reviews.map((review, index) => {
             if (index > 9) return;
@@ -48,7 +48,7 @@ export default function MovieReviews() {
                       ? `https://image.tmdb.org/t/p/w500${review.author_details.avatar_path}`
                       : defaultImg
                   }
-                  alt={reviews.author}
+                  alt={review.author}
                 />
                 <div className={css.blockText}>
                   <h3 className={css.author}>{review.author}</h3>
