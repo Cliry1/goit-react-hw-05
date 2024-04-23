@@ -1,0 +1,35 @@
+.li{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border: 1px solid black;
+  padding: 10px;
+}
+.ul{
+display: flex;
+flex-direction: column;
+gap: 50px;
+}
+.author{
+  margin-bottom: 20px;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.blockText{
+  width: 708px;
+}
+.img{
+  width: 150px;
+  flex-shrink: none;
+}
+.title{
+  margin: 40px auto ;
+}
+.p{
+  font-size: 24px;
+  font-weight: 600;
+}

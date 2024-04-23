@@ -1,0 +1,30 @@
+.ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+
+}
+.li{
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.img{
+  width: 150px;
+  flex:1;
+  margin-bottom: 16px;
+}
+.title{
+  margin: 40px auto ;
+}
+.p{
+  font-size: 24px;
+  font-weight: 600;
+}

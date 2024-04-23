@@ -1,0 +1,23 @@
+.title{
+  margin-bottom: 20px;
+}
+.link{
+  border: 1px black solid;
+  padding: 8px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: rgb(77, 77, 245);
+  width: 100px;
+  text-align: center;
+}
+.link:hover{
+
+  background-color: blue;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+}

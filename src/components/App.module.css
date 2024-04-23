@@ -1,6 +1,14 @@
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+.navigation{
+  margin-bottom: 30px;
+  display: flex;  
+  justify-content: center;  
+  gap: 40px;
+  font-size: 26px;
+}
+.navigationLink:hover{
+  color:blue;
+}
+
+.active{
+  color:blue;
 }
