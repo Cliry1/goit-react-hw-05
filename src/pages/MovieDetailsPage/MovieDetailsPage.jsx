@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import fetchItems from "../../movies-api";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -10,7 +10,7 @@ const defaultImg =
 
 export default function MovieDetailsPage() {
   const location = useLocation();
-  const backLinkHref = location.state ?? "/movies";
+  const backLinkHref = useRef(location.state ?? "/movies");
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -33,7 +33,7 @@ export default function MovieDetailsPage() {
 
   return (
     <div className={css.wrapper}>
-        <NavLink className={css.back} to={backLinkHref}>
+        <NavLink className={css.back} to={backLinkHref.current}>
           Go to back
         </NavLink>
       <div className={css.main}>
@@ -50,9 +50,7 @@ export default function MovieDetailsPage() {
           />
           <div className={css.containerText}>
             {loading && (
-              <div className={css.loader}>
                 <Loader />
-              </div>
             )}
             {error && <ErrorMessage />}
             {movie.title && (

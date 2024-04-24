@@ -1,30 +1,25 @@
 import css from "./App.module.css";
-import clsx from 'clsx';
+import Navigation from "./Navigation/Navigation";
 import { Suspense, lazy } from "react";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Loader from "./Loader/Loader";
 
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage"));
-const MovieDetailsPage = lazy(() =>
-  import("../pages/MovieDetailsPage/MovieDetailsPage")
-);
+const MovieDetailsPage = lazy(() =>import("../pages/MovieDetailsPage/MovieDetailsPage"));
 const MovieCast = lazy(() => import("./MovieCast/MovieCast"));
 const MovieReviews = lazy(() => import("./MovieReviews/MovieReviews"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage"));
 
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.navigationLink, isActive && css.active);
-};
+
 
 export default function App() {
   return (
     <>
-      <nav className={css.navigation}>
-        <NavLink className={buildLinkClass} to="/">Home</NavLink>
-        <NavLink className={buildLinkClass} to="/movies">Movies</NavLink>
-      </nav>
+
+      <Navigation />
+      <div className={css.container}>
       <Suspense fullback={<Loader />}>
         <Routes>
           <Route path="" element={<HomePage />} />
@@ -36,6 +31,7 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
+      </div>
     </>
   );
 }

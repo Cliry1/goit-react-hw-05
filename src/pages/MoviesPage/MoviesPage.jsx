@@ -50,7 +50,7 @@ export default function MoviesPage() {
       </form>
       {movies.length>0 && <MovieList items={movies}/>}
       {error && <ErrorMessage />}
-      {loading && <div className={css.loader}><Loader /></div>}
+      {loading && <Loader />}
     </>
   )
 }

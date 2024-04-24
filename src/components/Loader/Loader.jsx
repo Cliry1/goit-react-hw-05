@@ -3,6 +3,7 @@ import { MagnifyingGlass } from "react-loader-spinner";
 
 export default function Loader() {
   return (
+    <div className={css.loader}>
     <MagnifyingGlass
       visible={true}
       height="80"
@@ -13,5 +14,7 @@ export default function Loader() {
       glassColor="#c0efff"
       color="#e15b64"
     />
+    </div>
+
   );
 }

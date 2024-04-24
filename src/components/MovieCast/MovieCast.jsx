@@ -32,10 +32,8 @@ export default function MovieCast() {
     <>
       <h2 className={css.title}>Cast</h2>
       {loading ? (
-        <div className={css.loader}>
           <Loader />
-        </div>
-      ) : cast.cast ? (
+      ) : cast.cast?.length>0 ? (
         <ul className={css.ul}>
           {cast.cast.map((actor, index) => {
             if (index > 9) return;

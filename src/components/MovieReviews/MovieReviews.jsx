@@ -32,9 +32,7 @@ export default function MovieReviews() {
     <>
       <h2 className={css.title}>Reviews</h2>
       {loading ? (
-        <div className={css.loader}>
           <Loader />
-        </div>
       ) : reviews[0] ? (
         <ul className={css.ul}>
           {reviews.map((review, index) => {

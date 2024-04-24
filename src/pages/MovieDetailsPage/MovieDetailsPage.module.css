@@ -20,12 +20,7 @@
   width:300px;
   height: auto;
 }
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
+
 .containerText{
   display: flex;
   flex-direction: column;

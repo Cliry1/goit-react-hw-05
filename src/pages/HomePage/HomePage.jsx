@@ -31,7 +31,7 @@ useEffect(()=>{
   return (
     <>
       <h1 className={css.mainTitle}>Trending Today</h1>
-      {loading && <div className={css.loader}><Loader /></div>}
+      {loading && <Loader />}
       {error && <ErrorMessage />}
       {movies.length>0 && <MovieList items={movies}/>}
     </>
